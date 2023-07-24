@@ -7,15 +7,19 @@
  */
 
 add_shortcode('cb_ga_opt_out', 'cb_shortcode_opt_out');
-function cb_shortcode_opt_out() {
-    ?>
-    <a href="javascript:gaOptout();" onclick="alert('Google Analytics wurde deaktiviert');">Erfassung von Daten durch Google Analytics für diese Website deaktivieren</a>
-    <?php
+function cb_shortcode_opt_out($atts) {
+    $atts = shortcode_atts(array(
+		'property' => 'default'
+	), $atts, 'cb_ga_opt_out' );
+
+    cb_do_opt_out($atts['property']);
+    
+    return '<a href="javascript:gaOptout();">Erfassung von Daten durch Google Analytics für diese Website deaktivieren</a>';
 };
 
-function cb_do_opt_out() {
+function cb_do_opt_out($property) {
    echo "<script>
-            var gaProperty = 'G-XXXXXX';
+            var gaProperty = '" . $property . "';
             var disableStr = 'ga-disable-' + gaProperty;
 
             if (document.cookie.indexOf(disableStr + '=true') > -1) {
