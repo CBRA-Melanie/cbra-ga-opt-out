@@ -7,7 +7,7 @@
  */
 
 add_shortcode('cb_ga_opt_out', 'cb_shortcode_opt_out');
-function cb_shortcode_opt_out($atts) {
+function cb_shortcode_opt_out() {
     ?>
     <a href="javascript:gaOptout();" onclick="alert('Google Analytics wurde deaktiviert');">Erfassung von Daten durch Google Analytics für diese Website deaktivieren</a>
     <?php
