@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     CBRA Google Analytics Opt Out
  * Plugin URI:      https://cbra.digital
- * Description:     Sets a cookie that tells Google not to track. Use Shortcode [cb_ga_opt_out property="G-..."]
+ * Description:     Sets a cookie that tells Google not to track. 
  * Author:          CBRA Digital
  */
 
