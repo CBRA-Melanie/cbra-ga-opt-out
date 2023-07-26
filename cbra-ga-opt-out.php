@@ -22,7 +22,7 @@
  * 
  * @return          string                  the HTML for the clickable button
  */
-function cb_shortcode_opt_out($atts) {
+function cb_shortcode_opt_out(array $atts): string {
 
     $defaults = array(
         'property'      => 'default',
